@@ -93,11 +93,11 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
-N/A
+To install this project, you need to run: ``` npm install ```
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, execute the following command: ``` npm start ```
 
 <p>-With Visual Studio Code, open the folder where you downloaded this repository</p>
 
