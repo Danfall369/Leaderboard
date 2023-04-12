@@ -1,0 +1,56 @@
+#Scores {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+#viewScores {
+    display: flex;
+    flex-direction: column;
+}
+
+.recentScoreButton {
+    width: 4rem;
+    height: 2rem;
+}
+
+#scoresTitle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#scoreTable {
+    border: 2px solid black;
+}
+
+.playerScoresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playerScoresG {
+    background-color: lightgrey;
+}
+
+#addScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputsScore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    border: none;
+    padding: 0;
+}
+
+.submitScore {
+    width: 4rem;
+    height: 2rem;
+}
