@@ -30,10 +30,6 @@
   margin: 0;
 }
 
-.playerScoresG {
-  background-color: lightgrey;
-}
-
 #addScore {
   display: flex;
   flex-direction: column;
