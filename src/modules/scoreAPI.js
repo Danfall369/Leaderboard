@@ -60,7 +60,6 @@ const displayData = async () => {
   }
   return null;
 };
-displayData();
 
 // refresh button
 const refresh = document.getElementById('refresh');
