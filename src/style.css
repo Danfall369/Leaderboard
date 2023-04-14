@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   padding: 0;
   font-family: 'Monoton', monospace;
@@ -49,12 +49,12 @@ h2 {
   border-radius: 10px;
 }
 
-#refresh:before {
+#refresh::before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -62,23 +62,15 @@ h2 {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 #refresh:active {
-  color: #000
+  color: #000;
 }
 
-#refresh:active:after {
-  background: transparent;
-}
-
-#refresh:hover:before {
-  opacity: 1;
-}
-
-#refresh:after {
+#refresh::after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -88,6 +80,14 @@ h2 {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+#refresh:active::after {
+  background: transparent;
+}
+
+#refresh:hover::before {
+  opacity: 1;
 }
 
 @keyframes glowing {
@@ -151,12 +151,12 @@ h2 {
   border-radius: 10px;
 }
 
-#submitScore:before {
+#submitScore::before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -164,23 +164,15 @@ h2 {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 #submitScore:active {
-  color: #000
+  color: #000;
 }
 
-#submitScore:active:after {
-  background: transparent;
-}
-
-#submitScore:hover:before {
-  opacity: 1;
-}
-
-#submitScore:after {
+#submitScore::after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -192,6 +184,14 @@ h2 {
   border-radius: 10px;
 }
 
+#submitScore:active::after {
+  background: transparent;
+}
+
+#submitScore:hover::before {
+  opacity: 1;
+}
+
 @keyframes glowing {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
@@ -200,9 +200,10 @@ h2 {
 
 @keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF11A7, 0 0 70px #FF11A7, 0 0 80px #FF11A7, 0 0 100px #FF11A7, 0 0 150px #FF1177;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff11a7, 0 0 70px #ff11a7, 0 0 80px #ff11a7, 0 0 100px #ff11a7, 0 0 150px #f17;
   }
+
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF11A7, 0 0 35px #FF11A7, 0 0 40px #FF11A7, 0 0 50px #FF11A7, 0 0 75px #FF11A7;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff11a7, 0 0 35px #ff11a7, 0 0 40px #ff11a7, 0 0 50px #ff11a7, 0 0 75px #ff11a7;
   }
 }
