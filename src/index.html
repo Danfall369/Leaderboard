@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
+    <video autoplay loop muted id="bg-video">
+        <source src="./assets/retro-arcade-room-preview.mp4" type="video/mp4">
+      </video>
     <div class="title">
         <h1>Leaderboard</h1>
     </div>
@@ -16,11 +20,12 @@
             <button id="refresh" type="button">Refresh</button>
         </div>
 
-        <div id="scoreTable">
-            <ul id="playerScoresList">
-            </ul>
+            <div id="scoreTable">
+                <ul id="playerScoresList">
+                </ul>
+            </div>
         </div>
-        </div>
+        
         
         <div id="addScores">
             <div class="addScoreTitle">

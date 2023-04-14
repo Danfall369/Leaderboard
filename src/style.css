@@ -1,7 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Monoton', monospace;
+}
+
+#bg-video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+.title {
+  margin-left: 45%;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+  color: #fff;
+}
+
+h2 {
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
 #Scores {
   display: flex;
   flex-direction: row;
   gap: 5rem;
+  margin: 10% 0 0 30%;
 }
 
 #viewScores {
@@ -9,9 +36,64 @@
   flex-direction: column;
 }
 
-.recentScoreButton {
+#refresh {
   width: 4rem;
   height: 2rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+#refresh::before {
+  content: '';
+  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#refresh:active {
+  color: #000;
+}
+
+#refresh::after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+#refresh:active::after {
+  background: transparent;
+}
+
+#refresh:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
 
 #scoresTitle {
@@ -20,14 +102,24 @@
   gap: 1rem;
 }
 
+.scoreTableBg {
+  background-image: url(./assets/arcade.png);
+  background-repeat: no-repeat;
+}
+
 #scoreTable {
   border: 2px solid black;
+  box-shadow: 0 0 20px #4f9;
 }
 
 #playerScoresList {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.playerScores {
+  color: #fff;
 }
 
 #addScore {
@@ -46,7 +138,72 @@
   padding: 0;
 }
 
-.submitScore {
-  width: 4rem;
+#submitScore {
+  width: 11rem;
   height: 2rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+#submitScore::before {
+  content: '';
+  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#submitScore:active {
+  color: #000;
+}
+
+#submitScore::after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+#submitScore:active::after {
+  background: transparent;
+}
+
+#submitScore:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff11a7, 0 0 70px #ff11a7, 0 0 80px #ff11a7, 0 0 100px #ff11a7, 0 0 150px #f17;
+  }
+
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff11a7, 0 0 35px #ff11a7, 0 0 40px #ff11a7, 0 0 50px #ff11a7, 0 0 75px #ff11a7;
+  }
 }

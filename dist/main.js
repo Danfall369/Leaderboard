@@ -311,7 +311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#Scores {\r\n    display: flex;\r\n    flex-direction: row;\r\n    gap: 5rem;\r\n}\r\n\r\n#viewScores {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.recentScoreButton {\r\n    width: 4rem;\r\n    height: 2rem;\r\n}\r\n\r\n#scoresTitle {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 1rem;\r\n}\r\n\r\n#scoreTable {\r\n    border: 2px solid black;\r\n}\r\n\r\n.playerScoresList {\r\n    list-style: none;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n.playerScoresG {\r\n    background-color: lightgrey;\r\n}\r\n\r\n#addScore {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n#inputsScore {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-end;\r\n    gap: 1rem;\r\n    border: none;\r\n    padding: 0;\r\n}\r\n\r\n.submitScore {\r\n    width: 4rem;\r\n    height: 2rem;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#Scores {\r\n  display: flex;\r\n  flex-direction: row;\r\n  gap: 5rem;\r\n}\r\n\r\n#viewScores {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.recentScoreButton {\r\n  width: 4rem;\r\n  height: 2rem;\r\n}\r\n\r\n#scoresTitle {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 1rem;\r\n}\r\n\r\n#scoreTable {\r\n  border: 2px solid black;\r\n}\r\n\r\n#playerScoresList {\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n#addScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n#inputsScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 1rem;\r\n  border: none;\r\n  padding: 0;\r\n}\r\n\r\n.submitScore {\r\n  width: 4rem;\r\n  height: 2rem;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -416,6 +416,97 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
+/***/ }),
+/* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addData": () => (/* binding */ addData),
+/* harmony export */   "displayData": () => (/* binding */ displayData),
+/* harmony export */   "getData": () => (/* binding */ getData),
+/* harmony export */   "postData": () => (/* binding */ postData),
+/* harmony export */   "refresh": () => (/* binding */ refresh)
+/* harmony export */ });
+// Get Data
+const getData = async () => {
+  try {
+    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hK5IsEjL7yqRYqcS8MvI/scores/', {
+      method: 'GET',
+
+    });
+    const responseData = await res.json();
+    return responseData;
+  } catch (error) {
+    return error;
+  }
+};
+
+// Post Data
+const postData = async (data) => {
+  try {
+    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hK5IsEjL7yqRYqcS8MvI/scores/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const responseData = await res.json(data);
+    return responseData;
+  } catch (error) {
+    return error;
+  }
+};
+
+// Add Data
+const addData = () => {
+  const submitButton = document.getElementById('inputsScore');
+  submitButton.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('yourName').value;
+    const score = document.getElementById('yourScore').value;
+    if (name === '' || score === '') {
+      return null;
+    }
+    await postData({ user: name, score });
+    const message = document.createElement('div');
+    message.textContent = 'Score submitted successfully!';
+    document.body.appendChild(message);
+    setTimeout(() => {
+      message.remove();
+    }, 2000);
+    return null;
+  });
+};
+
+// Display Data
+const displayData = async () => {
+  try {
+    const viewData = await getData();
+    const { result } = viewData;
+    const containerList = document.getElementById('playerScoresList');
+    containerList.innerHTML = '';
+    result.sort((a, b) => b.score - a.score);
+    result.forEach((element) => {
+      const playerList = document.createElement('li');
+      playerList.classList.add('playerScores');
+      playerList.innerHTML = `<li>${element.user}:${element.score}</li>`;
+      containerList.appendChild(playerList);
+    });
+  } catch (error) {
+    return error;
+  }
+  return null;
+};
+
+// refresh button
+const refresh = document.getElementById('refresh');
+refresh.addEventListener('click', displayData);
+
+
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -495,7 +586,19 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 
+
+
+
+// Call the displayData function to display the player scores
+(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.displayData)();
+
+// Add an event listener to the submit button to add a new player score
+(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.addData)();
+
+// Add an event listener to the refresh button to refresh the player scores
+_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.refresh.addEventListener('click', _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.displayData);
 })();
 
 /******/ })()
