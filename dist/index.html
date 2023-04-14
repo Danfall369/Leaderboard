@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script defer src="main.js"></script></head>
+
 <body>
+    <video autoplay loop muted id="bg-video">
+        <source src="./assets/retro-arcade-room-preview.mp4" type="video/mp4">
+      </video>
     <div class="title">
         <h1>Leaderboard</h1>
     </div>
@@ -13,18 +17,11 @@
         <div id="viewScores">
             <div id="scoresTitle">
             <h2 class="recentScore">Recent Scores</h2>
-            <button class="recentScoreButton" type="button">Refresh</button>
+            <button id="refresh" type="button">Refresh</button>
         </div>
 
         <div id="scoreTable">
-            <ul class="playerScoresList">
-                <li class="playerScores">Name: 100</li>
-                <li class="playerScoresG">Name: 20</li>
-                <li class="playerScores">Name: 50</li>
-                <li class="playerScoresG">Name: 78</li>
-                <li class="playerScores">Name: 125</li>
-                <li class="playerScoresG">Name: 77</li>
-                <li class="playerScores">Name: 42</li>
+            <ul id="playerScoresList">
             </ul>
         </div>
         </div>
@@ -34,11 +31,11 @@
                 <h2 class="addScoreTitle">Add your score</h2>
             </div>
 
-            <fieldset id="inputsScore">
+            <form id="inputsScore" method='post' action="/">
                 <input type="text" name="yourName" id="yourName" class="yourName" placeholder="Your name" >
                 <input type="text" name="yourScore" id="yourScore" class="yourScore" placeholder="Your score" >
-                <button type="submit" class="submitScore">Submit</button>
-            </fieldset>
+                <button type="submit" id="submitScore">Submit</button>
+            </form>
         </div>
     </section>
 </body>
