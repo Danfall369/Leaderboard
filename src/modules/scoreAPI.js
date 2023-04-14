@@ -46,8 +46,8 @@ const addData = () => {
     setTimeout(() => {
       message.remove();
     }, 2000);
+    return null;
   });
-  return null;
 };
 
 // Display Data
