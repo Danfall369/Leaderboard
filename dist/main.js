@@ -311,7 +311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#Scores {\r\n  display: flex;\r\n  flex-direction: row;\r\n  gap: 5rem;\r\n}\r\n\r\n#viewScores {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.recentScoreButton {\r\n  width: 4rem;\r\n  height: 2rem;\r\n}\r\n\r\n#scoresTitle {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 1rem;\r\n}\r\n\r\n#scoreTable {\r\n  border: 2px solid black;\r\n}\r\n\r\n#playerScoresList {\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n#addScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n#inputsScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 1rem;\r\n  border: none;\r\n  padding: 0;\r\n}\r\n\r\n.submitScore {\r\n  width: 4rem;\r\n  height: 2rem;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Monoton', monospace;\r\n}\r\n\r\n#bg-video {\r\n  position: fixed;\r\n  min-width: 100%;\r\n  min-height: 100%;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translateX(-50%) translateY(-50%);\r\n  z-index: -1;\r\n}\r\n\r\n.title {\r\n  margin-left: 45%;\r\n  animation: neon1 1.5s ease-in-out infinite alternate;\r\n  color: #fff;\r\n}\r\n\r\nh2 {\r\n  animation: neon1 1.5s ease-in-out infinite alternate;\r\n}\r\n\r\n#Scores {\r\n  display: flex;\r\n  flex-direction: row;\r\n  gap: 5rem;\r\n  margin: 10% 0 0 30%;\r\n}\r\n\r\n#viewScores {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n#refresh {\r\n  width: 4rem;\r\n  height: 2rem;\r\n  border: none;\r\n  outline: none;\r\n  color: #fff;\r\n  background: #111;\r\n  cursor: pointer;\r\n  position: relative;\r\n  z-index: 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n#refresh::before {\r\n  content: '';\r\n  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);\r\n  position: absolute;\r\n  top: -2px;\r\n  left: -2px;\r\n  background-size: 400%;\r\n  z-index: -1;\r\n  filter: blur(5px);\r\n  width: calc(100% + 4px);\r\n  height: calc(100% + 4px);\r\n  animation: glowing 20s linear infinite;\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease-in-out;\r\n  border-radius: 10px;\r\n}\r\n\r\n#refresh:active {\r\n  color: #000;\r\n}\r\n\r\n#refresh::after {\r\n  z-index: -1;\r\n  content: '';\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #111;\r\n  left: 0;\r\n  top: 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n#refresh:active::after {\r\n  background: transparent;\r\n}\r\n\r\n#refresh:hover::before {\r\n  opacity: 1;\r\n}\r\n\r\n@keyframes glowing {\r\n  0% { background-position: 0 0; }\r\n  50% { background-position: 400% 0; }\r\n  100% { background-position: 0 0; }\r\n}\r\n\r\n#scoresTitle {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 1rem;\r\n}\r\n\r\n#scoreTable {\r\n  border: 2px solid black;\r\n  box-shadow: 0 0 20px #4f9;\r\n}\r\n\r\n#playerScoresList {\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n.playerScores {\r\n  color: #fff;\r\n}\r\n\r\n#addScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n#inputsScore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 1rem;\r\n  border: none;\r\n  padding: 0;\r\n}\r\n\r\n#submitScore {\r\n  width: 11rem;\r\n  height: 2rem;\r\n  border: none;\r\n  outline: none;\r\n  color: #fff;\r\n  background: #111;\r\n  cursor: pointer;\r\n  position: relative;\r\n  z-index: 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n#submitScore::before {\r\n  content: '';\r\n  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);\r\n  position: absolute;\r\n  top: -2px;\r\n  left: -2px;\r\n  background-size: 400%;\r\n  z-index: -1;\r\n  filter: blur(5px);\r\n  width: calc(100% + 4px);\r\n  height: calc(100% + 4px);\r\n  animation: glowing 20s linear infinite;\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease-in-out;\r\n  border-radius: 10px;\r\n}\r\n\r\n#submitScore:active {\r\n  color: #000;\r\n}\r\n\r\n#submitScore::after {\r\n  z-index: -1;\r\n  content: '';\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #111;\r\n  left: 0;\r\n  top: 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n#submitScore:active::after {\r\n  background: transparent;\r\n}\r\n\r\n#submitScore:hover::before {\r\n  opacity: 1;\r\n}\r\n\r\n@keyframes glowing {\r\n  0% { background-position: 0 0; }\r\n  50% { background-position: 400% 0; }\r\n  100% { background-position: 0 0; }\r\n}\r\n\r\n@keyframes neon1 {\r\n  from {\r\n    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff11a7, 0 0 70px #ff11a7, 0 0 80px #ff11a7, 0 0 100px #ff11a7, 0 0 150px #f17;\r\n  }\r\n\r\n  to {\r\n    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff11a7, 0 0 35px #ff11a7, 0 0 40px #ff11a7, 0 0 50px #ff11a7, 0 0 75px #ff11a7;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -418,6 +418,12 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 11 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "b8aa6caf6ccedbf7c6ab.mp4";
+
+/***/ }),
+/* 12 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -559,6 +565,18 @@ refresh.addEventListener('click', displayData);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -575,6 +593,26 @@ refresh.addEventListener('click', displayData);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -586,19 +624,24 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _assets_retro_arcade_room_preview_mp4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 
+
+
+const videoBg = document.getElementById('bg-video');
+videoBg.src = _assets_retro_arcade_room_preview_mp4__WEBPACK_IMPORTED_MODULE_1__;
 
 // Call the displayData function to display the player scores
-(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.displayData)();
+(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_2__.displayData)();
 
 // Add an event listener to the submit button to add a new player score
-(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.addData)();
+(0,_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_2__.addData)();
 
 // Add an event listener to the refresh button to refresh the player scores
-_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.refresh.addEventListener('click', _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_1__.displayData);
+_modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_2__.refresh.addEventListener('click', _modules_scoreAPI_js__WEBPACK_IMPORTED_MODULE_2__.displayData);
 })();
 
 /******/ })()

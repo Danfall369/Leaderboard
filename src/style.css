@@ -102,11 +102,6 @@ h2 {
   gap: 1rem;
 }
 
-.scoreTableBg {
-  background-image: url(./assets/arcade.png);
-  background-repeat: no-repeat;
-}
-
 #scoreTable {
   border: 2px solid black;
   box-shadow: 0 0 20px #4f9;
