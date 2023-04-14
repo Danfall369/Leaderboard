@@ -1,7 +1,7 @@
 // Get Data
 const getData = async () => {
   try {
-    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/M8xA00Wa4pzZJNfSlKuJ/scores/', {
+    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hK5IsEjL7yqRYqcS8MvI/scores/', {
       method: 'GET',
 
     });
@@ -15,7 +15,7 @@ const getData = async () => {
 // Post Data
 const postData = async (data) => {
   try {
-    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/M8xA00Wa4pzZJNfSlKuJ/scores/', {
+    const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hK5IsEjL7yqRYqcS8MvI/scores/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,16 +30,25 @@ const postData = async (data) => {
 };
 
 // Add Data
-const submitButton = document.getElementById('inputsScore');
-submitButton.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('yourName').value;
-  const score = document.getElementById('yourScore').value;
-  if (name === '' || score === '') {
-    return null;
-  }
-  return postData({ user: name, score });
-});
+const addData = () => {
+  const submitButton = document.getElementById('inputsScore');
+  submitButton.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('yourName').value;
+    const score = document.getElementById('yourScore').value;
+    if (name === '' || score === '') {
+      return null;
+    }
+    await postData({ user: name, score });
+    const message = document.createElement('div');
+    message.textContent = 'Score submitted successfully!';
+    document.body.appendChild(message);
+    setTimeout(() => {
+      message.remove();
+    }, 2000);
+  });
+  return null;
+};
 
 // Display Data
 const displayData = async () => {
@@ -66,5 +75,5 @@ const refresh = document.getElementById('refresh');
 refresh.addEventListener('click', displayData);
 
 export {
-  displayData, submitButton, postData, getData, refresh,
+  displayData, addData, postData, getData, refresh,
 };
